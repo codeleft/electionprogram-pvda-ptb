@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<a href="../../index.html">back</a>
+<h1>#GoLeft{{ page.index }}: {{ page.title }}</h1>
+
+{% for quote in site.quotes %}
+{% if quote.topic == page.index %}
+<blockquote>
+{{ quote.content | markdownify }}
+</blockquote>
+{% endif %}
+{% endfor %}
+
+<h2>Voorstellen</h2>
+{% for proposition in site.propositions %}
+{% comment %}
+Following condition makes sure that the section belongs to this topic.
+{% endcomment %}
+{% if proposition.topic == page.index %}
+<h4>{{ proposition.index }}. {{ proposition.title }}</h4>
+{{ proposition.content | markdownify }}
+{% endif %}
+{% endfor %}
+
+<h2>Vaststellingen</h2>
+{% for constatation in site.constatations %}
+{% comment %}
+Following condition makes sure that the section belongs to this topic.
+{% endcomment %}
+{% if constatation.topic == page.index %}
+<h4>{{ constatation.index }}. {{ constatation.title }}</h4>
+{{ constatation.content | markdownify }}
+{% endif %}
+{% endfor %}
+
+<h2>Visie</h2>
+{% for vision in site.visions %}
+{% comment %}
+Following condition makes sure that the section belongs to this topic.
+{% endcomment %}
+{% if vision.topic == page.index %}
+{{ vision.content | markdownify }}
+{% endif %}
+{% endfor %}
