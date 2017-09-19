@@ -27,6 +27,7 @@ github_username:  jekyll
 collections:
   topics:
     output: true
+    permalink: /:collection/:name
   propositions:
     output: false
   visions:
@@ -48,6 +49,11 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+languages: ["nl", "fr"]
+default_lang: ""
+exclude_from_localization: ["javascript", "images", "css"]
+parallel_localization: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
