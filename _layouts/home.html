@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>Topics...</h1>
+<h1>{{ site.data.text['home']['title'] }}</h1>
 
 {% for topic in site.topics %}
 <h3><a href="{{ topic.url }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>

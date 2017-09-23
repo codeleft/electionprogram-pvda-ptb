@@ -1,45 +1,38 @@
 ---
 layout: default
 ---
-<a href="../../index.html">back</a>
+<a href="../index.html">{{ site.data.text['topic']['back'] }}</a>
 <h1>#GoLeft{{ page.index }}: {{ page.title }}</h1>
 
 {% for quote in site.quotes %}
-{% if quote.topic == page.index %}
+{% if quote.topic == page.index and quote.lang == site.active_lang %}
 <blockquote>
 {{ quote.content | markdownify }}
 </blockquote>
 {% endif %}
 {% endfor %}
 
-<h2>Voorstellen</h2>
+<img src="{{ page.image }}" />
+
+<h2>{{ site.data.text['topic']['propositions'] }}</h2>
 {% for proposition in site.propositions %}
 {% comment %}
 Following condition makes sure that the section belongs to this topic.
 {% endcomment %}
-{% if proposition.topic == page.index %}
+{% if proposition.topic == page.index and proposition.lang == site.active_lang %}
 <h4>{{ proposition.index }}. {{ proposition.title }}</h4>
 {{ proposition.content | markdownify }}
 {% endif %}
 {% endfor %}
 
-<h2>Vaststellingen</h2>
-{% for constatation in site.constatations %}
-{% comment %}
-Following condition makes sure that the section belongs to this topic.
-{% endcomment %}
-{% if constatation.topic == page.index %}
-<h4>{{ constatation.index }}. {{ constatation.title }}</h4>
-{{ constatation.content | markdownify }}
-{% endif %}
-{% endfor %}
-
-<h2>Visie</h2>
+<h2>{{ site.data.text['topic']['vision'] }}</h2>
 {% for vision in site.visions %}
 {% comment %}
 Following condition makes sure that the section belongs to this topic.
 {% endcomment %}
-{% if vision.topic == page.index %}
+{% if vision.topic == page.index and vision.lang == site.active_lang %}
 {{ vision.content | markdownify }}
 {% endif %}
 {% endfor %}
+
+<h3><a href="{{ page.flyer }}">{{ site.data.text['topic']['flyer'] }}</a></h3>

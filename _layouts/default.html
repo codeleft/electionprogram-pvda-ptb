@@ -2,6 +2,12 @@
 <html>
   {% include head.html %}
   <body>
+    {% for lang in site.languages %}
+    {% if lang != site.active_lang %}
+    <a href="/{{lang}}{{page.permalink}}">{{ site.data.lang[lang]['link'] }}</a> <br/>
+    {% endif %}
+    {% endfor %}
+    <br/>
     <div class="page-content">
       <div class="wrap">
       {{ content }}
