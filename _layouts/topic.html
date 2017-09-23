@@ -35,4 +35,4 @@ Following condition makes sure that the section belongs to this topic.
 {% endif %}
 {% endfor %}
 
-<h3><a href="{{ page.flyer }}">{{ site.data.text['topic']['flyer'] }}</a></h3>
+<h3><a href="{{ ".." | append: page.flyer }}">{{ site.data.text['topic']['flyer'] }}</a></h3>
