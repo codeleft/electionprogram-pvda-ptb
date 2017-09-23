@@ -5,6 +5,6 @@ layout: default
 
 {% for topic in site.topics %}
 {% if topic.lang == site.active_lang %}
-<h3><a href="{{ topic.permalink }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>
+<h3><a href="{{ topic.permalink | relativize_url }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>
 {% endif %}
 {% endfor %}

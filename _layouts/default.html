@@ -4,7 +4,9 @@
   <body>
     {% for lang in site.languages %}
     {% if lang != site.active_lang %}
-    <a href="/{{lang}}{{page.permalink}}">{{ site.data.lang[lang]['link'] }}</a> <br/>
+    <nav>
+      <a href="{{ "../" | append: lang | append: page.permalink }}">{{ site.data.lang[lang]['link'] }}</a>
+    </nav>
     {% endif %}
     {% endfor %}
     <br/>
