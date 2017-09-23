@@ -48,7 +48,7 @@ plugins:
 
 languages: ["nl", "fr"]
 default_lang: ""
-exclude_from_localization: ["javascript", "images", "css", "flyers"]
+exclude_from_localization: []
 parallel_localization: true
 
 # Exclude from processing.
