@@ -4,5 +4,7 @@ layout: default
 <h1>{{ site.data.text['home']['title'] }}</h1>
 
 {% for topic in site.topics %}
-<h3><a href="{{ topic.url }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>
+{% if topic.lang == site.active_lang %}
+<h3><a href="{{ topic.permalink }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>
+{% endif %}
 {% endfor %}
