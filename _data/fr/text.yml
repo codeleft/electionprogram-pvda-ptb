@@ -1,5 +1,7 @@
 home:
     title: "Thèmes"
+    flyers: "Téléchargez tous les dépliants içi."
+    flyers_url: "/flyers/flyers-fr.zip"
 
 topic:
     back: "de retour"

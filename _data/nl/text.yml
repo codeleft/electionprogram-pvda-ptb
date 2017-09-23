@@ -1,5 +1,7 @@
 home:
     title: "Thema's"
+    flyers: "Download alle flyers hier."
+    flyers_url: "/flyers/flyers-nl.zip"
 
 topic:
     back: "terug"
