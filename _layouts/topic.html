@@ -12,7 +12,7 @@ layout: default
 {% endif %}
 {% endfor %}
 
-<img src="{{ page.image }}" />
+<img src="{{ ".." | append: page.image }}" />
 
 <h2>{{ site.data.text['topic']['propositions'] }}</h2>
 {% for proposition in site.propositions %}
