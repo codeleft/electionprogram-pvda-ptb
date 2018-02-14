@@ -61,17 +61,17 @@ layout: default
       </div>
     </section>
     <!-- VISIE -->
+    {% for vision in site.visions %}
+    {% comment %}
+    Following condition makes sure that the section belongs to this topic.
+    {% endcomment %}
+    {% if vision.topic == page.index and vision.lang == site.active_lang %}
     <a aria-expanded="false" data-target="#extention-panel" data-toggle="collapse" class="get button small-button">Deel</a>
     <div class="collapse" id="extention-panel">
-        {% for vision in site.visions %}
-        {% comment %}
-        Following condition makes sure that the section belongs to this topic.
-        {% endcomment %}
-        {% if vision.topic == page.index and vision.lang == site.active_lang %}
         {{ vision.content | markdownify }}
-        {% endif %}
-        {% endfor %}
     </div>
+    {% endif %}
+    {% endfor %}
 </article>
 <script src="/assets/js/jquery-1.9.1.js"></script>
 <script src="/assets/js/modal.js"></script>
