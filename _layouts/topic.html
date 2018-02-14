@@ -2,17 +2,19 @@
 layout: default
 ---
 <a href="./index.html">{{ site.data.text['topic']['back'] }}</a>
-<h1>#GoLeft{{ page.index }}: {{ page.title }}</h1>
-
-{% for quote in site.quotes %}
-{% if quote.topic == page.index and quote.lang == site.active_lang %}
-<blockquote>
-{{ quote.content | markdownify }}
-</blockquote>
-{% endif %}
-{% endfor %}
+<h1>{{ page.title }}</h1>
 
 <img src="{{ page.image | relativize_url }}" />
+
+<h2>{{ site.data.text['topic']['position'] }}</h2>
+{% for position in site.positions %}
+{% comment %}
+Following condition makes sure that the section belongs to this topic.
+{% endcomment %}
+{% if position.topic == page.index and position.lang == site.active_lang %}
+{{ position.content | markdownify }}
+{% endif %}
+{% endfor %}
 
 <h2>{{ site.data.text['topic']['propositions'] }}</h2>
 {% for proposition in site.propositions %}
@@ -35,4 +37,5 @@ Following condition makes sure that the section belongs to this topic.
 {% endif %}
 {% endfor %}
 
-<h3><a href="{{ ".." | append: page.flyer }}">{{ site.data.text['topic']['flyer'] }}</a></h3>
+<h2>{{ site.data.text['topic']['more_info'] }}</h2>
+<a href="{{ ".." | append: page.flyer }}">{{ site.data.text['topic']['flyer'] }}</a>
