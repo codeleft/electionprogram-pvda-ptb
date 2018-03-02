@@ -23,9 +23,11 @@ twitter_username: CodeLeft
 github_username:  CodeLeft
 
 collections:
+  chapters:
+    output: true
   topics:
     output: true
-    permalink: /thema-:title.html
+#    permalink: /thema-:title.html
   positions:
     output: false
   propositions:
@@ -38,18 +40,22 @@ defaults:
       path: ""
       type: topics
     values:
-      layout: topic
+      layout: topicpage
+  - scope:
+      path: ""
+      type: chapters
+    values:
+      layout: chapterpage
+
 
 # Build settings
 markdown: kramdown
 # theme: minima
 plugins:
   - jekyll-feed
-
-languages: ["nl", "fr"]
-default_lang: ""
-exclude_from_localization: []
-parallel_localization: true
+kramdown:
+  input: Pantsdown
+encoding: utf-8
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

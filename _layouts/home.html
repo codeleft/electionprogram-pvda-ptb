@@ -1,13 +1,8 @@
 ---
 layout: default
 ---
-<h1>{{ site.data.text['home']['title'] }}</h1>
-
-{% for topic in site.topics %}
-{% if topic.lang == site.active_lang %}
-<h3><a href="{{ topic.permalink | relativize_url }}">#GoLeft{{ topic.index }}: {{ topic.title }}</a></h3>
-{% endif %}
+<nav class="list-chapters">
+{% for chapter in site.chapters %}
+<li><a href="{{ chapter.url }}">{{ chapter.title }}</a></li>
 {% endfor %}
-
-<h1>Flyers</h1>
-<h3><a href="{{ ".." | append: site.data.text['home']['flyers_url'] }}">{{ site.data.text['home']['flyers'] }}</a></h3>
+</nav>
