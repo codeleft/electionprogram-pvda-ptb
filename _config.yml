@@ -23,6 +23,9 @@ twitter_username: CodeLeft
 github_username:  CodeLeft
 
 collections:
+  programmas:
+    output: true
+    permalink: /programmas/:title.html
   assen:
     output: true
     permalink: /assen/:title.html
@@ -39,14 +42,19 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: themas
+      type: programmas
     values:
-      layout: thema
+      layout: programma
   - scope:
       path: ""
       type: assen
     values:
       layout: as
+  - scope:
+      path: ""
+      type: themas
+    values:
+      layout: thema
 
 # Build settings
 markdown: kramdown

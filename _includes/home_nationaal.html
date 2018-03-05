@@ -1,0 +1,6 @@
+<h1>ASSEN</h1>
+{% for as in site.assen %}
+{% if as.program == page.slug and as.lang == site.active_lang %}
+<h3><a href="{{ as.permalink | relativize_url }}">{{ as.title }}</a></h3>
+{% endif %}
+{% endfor %}

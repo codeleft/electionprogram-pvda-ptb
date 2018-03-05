@@ -1,8 +1,6 @@
----
-layout: default
----
+<h1>THEMA'S</h1>
 {% for thema in site.themas %}
-{% if thema.as == page.slug and thema.lang == site.active_lang %}
+{% if thema.program == page.slug and thema.lang == site.active_lang %}
 <h3><a href="{{ thema.permalink | relativize_url }}">{{ thema.title }}</a></h3>
 {% endif %}
 {% endfor %}

@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% if page.type == 'nationaal' %}
+  {% include home_nationaal.html %}
+{% else %}
+  {% include home_lokaal.html %}
+{% endif %}
