@@ -23,22 +23,30 @@ twitter_username: CodeLeft
 github_username:  CodeLeft
 
 collections:
-  topics:
+  assen:
     output: true
-    permalink: /thema-:title.html
-  positions:
+    permalink: /assen/:title.html
+  themas:
+    output: true
+    permalink: /themas/:title.html
+  standpunten:
     output: false
-  propositions:
+  eisen:
     output: false
-  visions:
+  visies:
     output: false
 
 defaults:
   - scope:
       path: ""
-      type: topics
+      type: themas
     values:
-      layout: topic
+      layout: thema
+  - scope:
+      path: ""
+      type: assen
+    values:
+      layout: as
 
 # Build settings
 markdown: kramdown

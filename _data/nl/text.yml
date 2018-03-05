@@ -3,9 +3,9 @@ home:
     flyers: "Download alle flyers hier."
     flyers_url: "/flyers/flyers-nl.zip"
 
-topic:
+thema:
     back: "terug"
-    position: "Standpunt"
-    propositions: "Voorstellen"
-    vision: "Visie"
+    standpunt: "Standpunt"
+    eisen: "Eisen"
+    visie: "Visie"
     flyer: "Download deze flyer."
