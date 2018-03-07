@@ -1,6 +1,7 @@
 ---
 lang: nl
-chapter: 1
+chapter: pvda01
+site-url: http://127.0.01:4000
 title: "Ongelijkheid bestrijden: investeren, verdelen, beschermen"
 ---
 In tien jaar tijd is de ongelijkheid nog scherper geworden, de rijken worden rijker op de rug van de gewone mensen. Nooit eerder waren er zoveel multimiljonairs bij de 1 % rijksten. En tegelijk groeit de armoede, wordt onzekerheid de norm en vermindert de openbare dienstverlening terwijl de nood nooit eerder zo hoog was.
