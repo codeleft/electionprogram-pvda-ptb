@@ -40,7 +40,7 @@ defaults:
       path: ""
       type: topics
     values:
-      layout: topicpage
+      layout: topicpage-final
   - scope:
       path: ""
       type: chapters

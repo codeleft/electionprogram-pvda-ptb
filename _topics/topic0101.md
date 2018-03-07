@@ -2,6 +2,6 @@
 topic: 1
 chapter: 1
 title: "Een plan voor sociale en ecologische overheidsinvesteringen uitwerken"
-propositionhdr: "Wij stellen volgende maatregelen voor:"
+variables: variables.html
 ---
 Ondanks de miljarden euro’s die grote bedrijven cadeau gekregen hebben, is er te weinig geïnvesteerd in grote delen van het productieapparaat. Multinationals stapelen hun cash immers liever op en laten die binnen de financiële wereld circuleren. De infrastructuur van de overheid (het spoor, scholen, ziekenhuizen …) laat men stilletjes verkommeren. Ook de sociale voorzieningen, de ecologische transitie en de digitale revolutie vergen massale investeringen. Die zijn essentieel om kwaliteitsvolle jobs te kunnen creëren en de levenskwaliteit te verbeteren, terwijl vandaag de sociale onzekerheid een nooit gezien niveau heeft bereikt. Een investeringsplan op korte termijn is van vitaal belang.
