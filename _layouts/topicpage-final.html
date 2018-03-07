@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="https://sandboxpvda.nationbuilder.com/themes/12/599e0199c4b9f5c0c6000000/0/attachments/15109272611520337575/default/theme.scss" type="text/css">
+<link rel="stylesheet" href="https://sandboxpvda.nationbuilder.com/themes/12/599e0199c4b9f5c0c6000000/0/attachments/15109272611520337575/default/tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+
+{% include {{ page.variables }} %}
+
+<article>
+  <section class="program-header">
+  	<a aria-expanded="false" data-target="#share-panel-top" data-toggle="collapse" class="get button small-button alt-button">{{ share_button_text }}</a>
+    <div class="collapse" id="share-panel-top">
+      <div class="share-container" role="alert" aria-live="polite">
+        <div class="row-fluid">
+          <div class="span4">
+            <div class="padbottom">{{ share_link_title_text }}</div>
+            <div class="form">
+              <input type="text" class="share-control" readonly="readonly" value="{{ site_url }}{{ page.url }}" autofocus="">
+            </div>
+          </div>
+          <div class="span8">
+            <div class="padbottom">{{ share_social_title_text }}</div>
+            <a class="button small-button" href="mailto:?body={{ site_url }}{{ page.url }}">{{ email_button_text }}</a>
+            <a class="button small-button facebook-share-link button-facebook" href="http://www.facebook.com/share.php?u={{ site_url }}{{ page.url }}" target="_blank">{{ facebook_button_text }}</a>
+            <a class="button small-button twitter-share-link button-twitter" onclick="window.open('http://twitter.com/share?url={{ site_url }}{{ page.url }}', 'mywin', 'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;" aria-label="Twitter share" target="_blank">{{ twitter_button_text }}</a>
+      			<a class="mobile-visible-inline-block button" style="background-color:#25D366" href="whatsapp://send?text={{ page.title | urlencode}} - {{ page.full_url | urlencode }}" target="_blank" title="Deel op WhatsApp">{{ whatsapp_button_text }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="program-body ">
+    <section class="program-intro">
+      <p>
+        {{ content | markdownify }}
+      </p>
+    </section>
+
+    <section class="program-measures">
+      <p class="program-measures-title">{{ proposition_title }}</p>
+
+      <div class="list-measures list-group">
+        {% for proposition in site.propositions %}
+        {% if proposition.topic == page.topic %}
+        <li id="mesure-{{ proposition.proposition }}" class="list-group-item" data-measure-seq="1" data-target="#modal-measure-{{ proposition.proposition }}">
+          {{ proposition.content | markdownify }}
+        </li>
+
+        <div class="modal fade modal-measure" id="modal-measure-{{ proposition.proposition }}" role="dialog" tabindex="-1">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button"><span class="icon-cancel" aria-hidden="true"></span></button>
+                <div class="modal-title">{{ page.title }}</div>
+              </div>
+              <div class="modal-body">
+                {{ proposition.content | markdownify }}
+              </div>
+              <div class="modal-footer actions">
+                <a data-dismiss="modal" type="button" class="button next-alt" style="float:right;">{{ modal_close_button_text }}</a>
+                <a aria-expanded="false" data-target="#panel-share-{{ proposition.proposition }}" data-toggle="collapse" class="get button small-button">{{ modal_share_button_text }}</a>
+                <div class="collapse" id="panel-share-{{ proposition.proposition }}">
+                  <div class="share-container" role="alert" aria-live="polite">
+                    <div class="row-fluid">
+                      <div class="span4">
+                        <div class="padbottom">{{ modal_share_link_title_text }}</div>
+                        <div class="form">
+                          <input type="text" class="share-control" readonly="readonly" value="{{ site_url }}{{ page.url }}#mesure-{{ proposition.proposition }}" autofocus="">
+                        </div>
+                      </div>
+                      <div class="span8">
+                        <div class="padbottom">{{ modal_share_social_title_text }}</div>
+                       	<a class="button small-button" href="mailto:?subject={{ page.title }}&body={{ page.headline | url_encode }}%20{{ site_url }}{{ page.url }}#measure-{{ proposition.proposition }}">{{ email_button_text }}</a>
+    										<a class="button small-button facebook-share-link button-facebook" href="http://www.facebook.com/share.php?u={{ site_url }}{{ page.url }}#measure-{{ proposition.proposition }}" target="_blank">{{ facebook_button_text }}</a>
+    										<a class="button small-button twitter-share-link button-twitter" href="https://twitter.com/home?status={{ page.title | url_encode}}%20{{ page.full_url }}#measure-{{ proposition.proposition }}" target="_blank">{{ twitter_button_text }}</a>
+                        <a class="mobile-visible-inline-block button" style="background-color:#25D366" href="whatsapp://send?text={{ page.title | urlencode}} - {{ page.full_url | urlencode }}#measure-{{ proposition.proposition }}" target="_blank" title="Deel op WhatsApp">{{ whatsapp_button_text }}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+      </div>
+    </section>
+
+    <section class="program-extention">
+      <a aria-expanded="false" data-target="#share-panel-extention" data-toggle="collapse" class="button button-icon"><i class="icon-plus-squared" aria-hidden="true"></i>{{ extention_button_text }}</a>
+      <a aria-expanded="false" data-target="#share-panel-bot" data-toggle="collapse" class="get button small-button alt-button">{{ share_button_text }}</a>
+      <div class="collapse" id="share-panel-bot">
+        <div class="share-container" role="alert" aria-live="polite">
+          <div class="row-fluid">
+            <div class="span4">
+              <div class="padbottom">{{ share_link_title_text }}</div>
+              <div class="form">
+                <input type="text" class="share-control" readonly="readonly" value="{{ page.full_url }}" autofocus="">
+              </div>
+            </div>
+            <div class="span8">
+              <div class="padbottom">{{ share_social_title_text }}</div>
+              <a class="button small-button" href="mailto:?body={{ site_url }}{{ page.url }}">{{ email_button_text }}</a>
+              <a class="button small-button facebook-share-link button-facebook" href="http://www.facebook.com/share.php?u={{ site_url }}{{ page.url }}" target="_blank">{{ facebook_button_text }}</a>
+              <a class="button small-button twitter-share-link button-twitter" onclick="window.open('http://twitter.com/share?url={{ site_url }}{{ page.url }}', 'mywin', 'left=20,top=20,width=500,height=300,toolbar=1,resizable=0'); return false;" aria-label="Twitter share" target="_blank">{{ twitter_button_text }}</a>
+              <a class="mobile-visible-inline-block button" style="background-color:#25D366" href="whatsapp://send?text={{ page.title | urlencode}} - {{ page.full_url | urlencode }}" target="_blank" title="Deel op WhatsApp">{{ whatsapp_button_text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse padtop" id="share-panel-extention">
+        Blanko
+      </div>
+    </section>
+  </section>
+
+  <section class="program-footer padtop padbottom">
+
+  </section>
+
+</article>
+<script src="/assets/js/jquery-1.9.1.js"></script>
+<script src="/assets/js/modal.js"></script>
