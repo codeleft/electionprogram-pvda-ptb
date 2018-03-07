@@ -54,7 +54,7 @@ defaults:
       path: ""
       type: themas
     values:
-      layout: thema
+      layout: themanew
 
 # Build settings
 markdown: kramdown
